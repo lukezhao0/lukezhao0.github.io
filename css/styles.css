@@ -164,6 +164,7 @@ body {
   right: 0;
   height: 2px;
   background-color: var(--accent-blue);
+  display: none; /* Remove the blue underline */
 }
 
 /* Mobile Menu Toggle */
