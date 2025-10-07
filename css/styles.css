@@ -354,7 +354,7 @@ body {
 .role-title {
   margin: 0;
   font-weight: var(--font-weight-semibold);
-  color: var(--text);
+  color: var(--accent-blue);
 }
 
 .role-meta {
@@ -416,6 +416,83 @@ body {
   border-radius: 12px;
   font-size: 13px;
   font-weight: var(--font-weight-regular);
+}
+
+/* ===== Projects list (LinkedIn-style card like volunteer section) ===== */
+.project-card {
+  display: grid;
+  grid-template-columns: 56px 1fr; /* logo | content */
+  gap: var(--space-l);
+  padding: var(--space-l) 0 var(--space-2xl);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-card:last-child {
+  border-bottom: none;
+}
+
+.project-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: #f3f4f6; /* neutral box like LinkedIn icon tile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* If you later add images inside .project-logo, make them fit nicely */
+.project-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.project-body {
+  min-width: 0;
+}
+
+.role-title {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  font-size: 17px;
+}
+
+.role-title a {
+  color: var(--accent-blue); /* blue always */
+  text-decoration: none;
+}
+
+.role-title a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+/* meta line under the title */
+.role-dates {
+  margin-top: 2px;
+  color: var(--muted-text);
+  font-size: var(--font-size-small);
+}
+
+.role-desc {
+  margin: var(--space-s) 0 0 0;
+  line-height: var(--line-height-normal);
+  color: var(--text);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .project-card {
+    grid-template-columns: 48px 1fr;
+    gap: var(--space-m);
+  }
+  .project-logo {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 /* Misc Page Layout */
