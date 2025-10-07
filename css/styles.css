@@ -419,34 +419,46 @@ body {
 }
 
 /* ===== Projects list (LinkedIn-style card like volunteer section) ===== */
+/* ===== Projects list (compact CV style, identical to Volunteering) ===== */
 .project-card {
-  display: grid;
-  grid-template-columns: 56px 1fr; /* logo | content */
-  gap: var(--space-l);
-  padding: var(--space-l) 0 var(--space-2xl);
+  padding: var(--space-m) 0;
   border-bottom: 1px solid var(--border);
 }
-
 .project-card:last-child {
   border-bottom: none;
 }
 
-.project-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 8px;
-  background: #f3f4f6; /* neutral box like LinkedIn icon tile */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.project-body {
+  min-width: 0;
 }
 
-/* If you later add images inside .project-logo, make them fit nicely */
-.project-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.project-card .role-title {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  font-size: 15px; /* same as volunteering */
+  line-height: var(--line-height-normal);
+}
+.project-card .role-title a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+.project-card .role-title a:hover {
+  text-decoration: underline;
+}
+
+.project-card .role-dates {
+  margin-top: 2px;
+  color: var(--muted-text);
+  font-size: 13px; /* same as volunteering */
+  line-height: var(--line-height-normal);
+}
+
+.project-card .role-desc {
+  margin: var(--space-xs) 0 0 0;
+  line-height: var(--line-height-normal);
+  font-size: 14px; /* same as volunteering */
+  color: var(--text);
 }
 
 .project-body {
@@ -483,16 +495,42 @@ body {
   color: var(--text);
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .project-card {
-    grid-template-columns: 48px 1fr;
-    gap: var(--space-m);
-  }
-  .project-logo {
-    width: 48px;
-    height: 48px;
-  }
+/* Volunteering list uses the same compact card layout as Projects */
+.volunteer-card {
+  padding: var(--space-m) 0;
+  border-bottom: 1px solid var(--border);
+}
+.volunteer-card:last-child {
+  border-bottom: none;
+}
+
+/* Reuse existing text styles */
+.volunteer-card .role-title {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  font-size: 15px;
+  line-height: var(--line-height-normal);
+}
+.volunteer-card .role-title a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+.volunteer-card .role-title a:hover {
+  text-decoration: underline;
+}
+
+.volunteer-card .role-dates {
+  margin-top: 2px;
+  color: var(--muted-text);
+  font-size: 13px;
+  line-height: var(--line-height-normal);
+}
+.volunteer-card .role-desc {
+  margin: var(--space-xs) 0 0 0;
+  line-height: var(--line-height-normal);
+  font-size: 14px;
+  color: var(--text);
 }
 
 /* Misc Page Layout */
