@@ -75,21 +75,21 @@
     });
   }
 
-  // Keyboard navigation enhancements
-  function initKeyboardNavigation() {
-    // Add skip link functionality
-    const skipLink = document.createElement("a");
-    skipLink.href = "#main-content";
-    skipLink.className = "skip-link";
-    skipLink.textContent = "Skip to main content";
-    document.body.insertBefore(skipLink, document.body.firstChild);
+  // // Keyboard navigation enhancements
+  // function initKeyboardNavigation() {
+  //   // Add skip link functionality
+  //   const skipLink = document.createElement("a");
+  //   skipLink.href = "#main-content";
+  //   skipLink.className = "skip-link";
+  //   skipLink.textContent = "Skip to main content";
+  //   document.body.insertBefore(skipLink, document.body.firstChild);
 
-    // Add main content ID if it doesn't exist
-    const mainContent = document.querySelector("main");
-    if (mainContent && !mainContent.id) {
-      mainContent.id = "main-content";
-    }
-  }
+  //   // Add main content ID if it doesn't exist
+  //   const mainContent = document.querySelector("main");
+  //   if (mainContent && !mainContent.id) {
+  //     mainContent.id = "main-content";
+  //   }
+  // }
 
   // Initialize all functionality when DOM is ready
   function init() {
@@ -98,13 +98,13 @@
       document.addEventListener("DOMContentLoaded", function () {
         initMobileMenu();
         initSmoothScrolling();
-        initKeyboardNavigation();
+        // initKeyboardNavigation();
       });
     } else {
       // DOM is already loaded
       initMobileMenu();
       initSmoothScrolling();
-      initKeyboardNavigation();
+      // initKeyboardNavigation();
     }
   }
 

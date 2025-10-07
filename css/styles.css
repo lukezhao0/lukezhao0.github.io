@@ -260,102 +260,131 @@ body {
 }
 
 /* Experience Page Layout */
+/* ===== Experience (LinkedIn-style) ===== */
+
 .experience-layout {
-  max-width: 1000px;
+  max-width: 900px; /* keep page readable like a CV */
+  margin: 0; /* align left on the page */
 }
 
-.resume-section {
-  margin-bottom: var(--space-3xl);
-}
-
-.resume-section:last-child {
-  margin-bottom: 0;
-}
-
+/* Section titles should NOT be forced lowercase for resume look */
 .section-title {
-  font-size: var(--font-size-section);
-  font-weight: var(--font-weight-semibold);
-  margin: 0 0 var(--space-2xl) 0;
-  color: var(--text);
-  text-transform: lowercase;
+  text-transform: none;
 }
 
-.resume-item {
-  margin-bottom: var(--space-2xl);
-  padding-bottom: var(--space-2xl);
+/* Company card (logo at left, content at right) */
+.company-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--space-l);
+  padding: var(--space-l) 0 var(--space-2xl);
   border-bottom: 1px solid var(--border);
 }
 
-.resume-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.resume-header {
+.company-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f4f6; /* subtle placeholder if no image */
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: var(--space-m);
-  flex-wrap: wrap;
-  gap: var(--space-s);
+  align-items: center;
+  justify-content: center;
 }
 
-.resume-title {
-  flex: 1;
-  min-width: 0;
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* logos of varying aspect ratios */
 }
 
-.resume-title strong {
+.company-name {
+  margin: 0;
+  font-size: 18px;
   font-weight: var(--font-weight-semibold);
   color: var(--text);
 }
 
-.organization {
-  color: var(--muted-text);
-  margin-left: var(--space-s);
+.role-list {
+  margin-top: var(--space-m);
 }
 
-.resume-meta {
-  text-align: right;
-  flex-shrink: 0;
+/* A role row with a left timeline rail (dot + connecting line) */
+.role-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 16px 1fr; /* rail | content */
+  column-gap: var(--space-l);
+  padding: var(--space-m) 0;
 }
 
-.location {
-  color: var(--muted-text);
-  display: block;
+/* Gray dot */
+.role-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1; /* medium gray like LinkedIn */
+  grid-column: 1;
+  justify-self: center;
+  margin-top: 6px; /* aligns dot with first text line */
 }
 
-.dates {
+/* Vertical connector (for all but the last role) */
+.role-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 7px; /* centers line under the dot */
+  top: calc(var(--space-m) + 14px); /* start just under the dot */
+  bottom: -6px;
+  width: 2px;
+  background: #e5e7eb; /* light gray connector */
+}
+
+/* When there is only one role under a company, hide the dot/line */
+.role-item.single::before,
+.role-item.single::after {
+  display: none;
+}
+
+.role-content {
+  grid-column: 2;
+}
+
+.role-title {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+}
+
+.role-meta {
+  margin-top: 2px;
   color: var(--muted-text);
   font-size: var(--font-size-small);
-  display: block;
-  margin-top: var(--space-xs);
 }
 
-.resume-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 var(--space-m) 0;
-  padding-left: var(--space-xl);
+.role-meta .bullet {
+  display: inline;
 }
 
-.resume-bullets li {
-  position: relative;
-  margin-bottom: var(--space-s);
+.role-desc {
+  margin: var(--space-s) 0 0 0;
   line-height: var(--line-height-normal);
 }
 
-.resume-bullets li::before {
-  content: "•";
-  position: absolute;
-  left: calc(-1 * var(--space-xl));
-  color: var(--accent-blue);
-  font-weight: bold;
-}
-
-.resume-bullets li:last-child {
-  margin-bottom: 0;
+/* Mobile tweaks: stack and keep spacing consistent */
+@media (max-width: 768px) {
+  .company-card {
+    grid-template-columns: 48px 1fr;
+    gap: var(--space-m);
+  }
+  .company-logo {
+    width: 48px;
+    height: 48px;
+  }
+  .role-item {
+    column-gap: var(--space-m);
+  }
 }
 
 /* Project and Publication Links */
@@ -485,6 +514,7 @@ body {
 
   .page-container {
     padding: 0 var(--space-m);
+    margin: 0;
   }
 
   .main-content {
