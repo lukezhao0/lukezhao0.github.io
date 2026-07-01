@@ -208,7 +208,7 @@ body {
 /* About Page Layout */
 .about-layout {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 260px;
   gap: var(--space-2xl);
   align-items: start;
 }
@@ -246,43 +246,6 @@ body {
   text-transform: none;
 }
 
-.education-entry {
-  margin-bottom: 0;
-}
-
-.education-school {
-  margin: 0 0 var(--space-m) 0;
-  font-size: 18px;
-  font-weight: var(--font-weight-semibold);
-  color: var(--text);
-}
-
-.education-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.education-list li {
-  position: relative;
-  padding-left: var(--space-xl);
-  margin-bottom: var(--space-s);
-  line-height: var(--line-height-normal);
-  color: var(--text);
-}
-
-.education-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--accent-blue);
-  font-weight: bold;
-}
-
-.education-list li:last-child {
-  margin-bottom: 0;
-}
-
 .about-content .company-card:last-child {
   border-bottom: none;
   padding-bottom: 0;
@@ -300,8 +263,9 @@ body {
 
 .headshot-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
+  border-radius: 4px;
 }
 
 .address-block {
@@ -402,10 +366,11 @@ body {
   grid-column: 2;
 }
 
-.role-title {
+.company-card .role-title {
   margin: 0;
   font-weight: var(--font-weight-semibold);
-  color: var(--accent-blue);
+  color: var(--text);
+  font-size: 16px;
 }
 
 .role-meta {
@@ -737,7 +702,7 @@ body {
   }
 
   .headshot-image {
-    max-width: 250px;
+    max-width: 180px;
   }
 
   .address-block {
@@ -776,7 +741,7 @@ body {
   }
 
   .headshot-image {
-    max-width: 200px;
+    max-width: 160px;
   }
 
   .tags {
