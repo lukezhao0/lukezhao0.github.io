@@ -206,15 +206,29 @@ body {
 }
 
 /* About Page Layout */
-.about-layout {
+.about-intro-layout {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 260px;
   gap: var(--space-2xl);
   align-items: start;
 }
 
-.about-content {
+.about-intro-content {
   min-width: 0;
+}
+
+.about-resume {
+  margin-top: var(--space-3xl);
+  width: 100%;
+}
+
+.about-resume .company-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.about-resume .resume-section:first-child {
+  margin-top: 0;
 }
 
 .subheading {
@@ -232,8 +246,7 @@ body {
   margin-bottom: 0;
 }
 
-/* About page resume sections */
-.resume-section {
+.about-resume .resume-section {
   margin-top: var(--space-3xl);
 }
 
@@ -246,15 +259,9 @@ body {
   text-transform: none;
 }
 
-.about-content .company-card:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
 /* About Sidebar */
 .about-sidebar {
-  position: sticky;
-  top: 100px;
+  align-self: start;
 }
 
 .headshot-card {
@@ -263,8 +270,9 @@ body {
 
 .headshot-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
+  border-radius: 4px;
 }
 
 .address-block {
@@ -686,7 +694,7 @@ body {
   }
 
   /* About Page Mobile */
-  .about-layout {
+  .about-intro-layout {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
   }
@@ -701,7 +709,7 @@ body {
   }
 
   .headshot-image {
-    max-width: 250px;
+    max-width: 180px;
   }
 
   .address-block {
@@ -740,7 +748,7 @@ body {
   }
 
   .headshot-image {
-    max-width: 200px;
+    max-width: 160px;
   }
 
   .tags {
@@ -773,7 +781,8 @@ body {
     padding: 0;
   }
 
-  .about-layout {
+  .about-layout,
+  .about-intro-layout {
     grid-template-columns: 1fr;
     gap: var(--space-l);
   }
