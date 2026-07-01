@@ -232,6 +232,62 @@ body {
   margin-bottom: 0;
 }
 
+/* About page resume sections */
+.resume-section {
+  margin-top: var(--space-3xl);
+}
+
+.section-title {
+  font-size: var(--font-size-section);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-xl) 0;
+  color: var(--text);
+  text-transform: none;
+}
+
+.education-entry {
+  margin-bottom: 0;
+}
+
+.education-school {
+  margin: 0 0 var(--space-m) 0;
+  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+}
+
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-list li {
+  position: relative;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-s);
+  line-height: var(--line-height-normal);
+  color: var(--text);
+}
+
+.education-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+  font-weight: bold;
+}
+
+.education-list li:last-child {
+  margin-bottom: 0;
+}
+
+.about-content .company-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 /* About Sidebar */
 .about-sidebar {
   position: sticky;
@@ -265,11 +321,6 @@ body {
 .experience-layout {
   max-width: 900px; /* keep page readable like a CV */
   margin: 0; /* align left on the page */
-}
-
-/* Section titles should NOT be forced lowercase for resume look */
-.section-title {
-  text-transform: none;
 }
 
 /* Company card (logo at left, content at right) */
