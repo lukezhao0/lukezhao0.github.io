@@ -1,15 +1,4 @@
-# Stanford Student Personal Website
-
-A minimal, professional personal website for a Stanford college student, designed to be hosted on GitHub Pages. The site features a clean, modern design with a macOS blue accent theme and is fully responsive.
-
-## Features
-
-- **Clean, Minimal Design**: Professional layout with ample whitespace and readable typography
-- **Responsive**: Works perfectly on desktop, tablet, and mobile devices
-- **Accessible**: WCAG compliant with proper semantic HTML, keyboard navigation, and screen reader support
-- **Fast Loading**: Optimized for performance with system fonts and minimal JavaScript
-- **SEO Optimized**: Proper meta tags, Open Graph support, and sitemap
-- **GitHub Pages Ready**: Configured for easy deployment to GitHub Pages
+# Intro
 
 ## Site Structure
 
